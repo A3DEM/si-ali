@@ -1,0 +1,36 @@
+body {
+    height: 100vh;
+    margin: 0px;
+    padding: 0;
+    display: flex;
+}
+.login {
+    display: flex;
+    background-color: aliceblue;
+    box-shadow: 1px 1px 1px 1px grey;
+    flex-direction: column;
+    border-radius: 10px;
+    width: 400px;
+    height:200px;
+    margin: auto;
+}
+.login div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    padding:5px;
+}
+.login input {
+    width: 300px;
+}
+#connect {
+    margin-top: 20px;
+    display: flex;
+    width: fit-content;
+    margin: 20px auto;
+}
+.login form {
+    margin: auto;
+}
