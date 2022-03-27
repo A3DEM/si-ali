@@ -3,15 +3,14 @@ body {
     margin: 0px;
     padding: 0;
     display: flex;
+    font-family: 'Poppins', sans-serif;
 }
 .login {
     display: flex;
-    background-color: aliceblue;
-    box-shadow: 1px 1px 1px 1px grey;
+    /*background-color: aliceblue;*/
+    /* box-shadow: 1px 1px 1px 1px grey; */
     flex-direction: column;
     border-radius: 10px;
-    width: 400px;
-    height:200px;
     margin: auto;
 }
 .login div {
@@ -19,18 +18,51 @@ body {
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    align-items: center;
+    align-items: flex-start;
     padding:5px;
+}
+.login label {
+    margin-left: 20px;
+    background-color: white;
+    color: gray;
+    transform: translateY(50%);
+    padding: 0px 10px;
 }
 .login input {
     width: 300px;
+    padding: 15px 20px;
+    border-radius: 5px;
+    border: 2px solid gray;
+    transition: 0.25s ease-in-out;
+}
+.login input:focus, .login input:focus-visible {
+    border: 2px solid #166053;
 }
 #connect {
-    margin-top: 20px;
     display: flex;
     width: fit-content;
-    margin: 20px auto;
+    margin: 20px 5px;
+    font-family: 'Poppins', sans-serif;
+    border: none;
+    background-color: #166053;
+    border-radius: 5px;
+    font-weight: bold;
+    color: white;
+    width: 344px;
+    padding: 15px 20px;
+    font-size: 16px;
 }
 .login form {
     margin: auto;
+}
+.login h1 {
+    font-weight: bold;
+    line-height: 0;
+}
+.login input {
+    font-family: 'Poppins', sans-serif;
+}
+.login a {
+    color: #166053;
+    font-weight: bold;
 }

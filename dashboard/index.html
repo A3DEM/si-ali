@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./dashboard.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>Dashboard</title>
+</head>
+
+<body>
+    <style type="text/css">
+        .table-content {
+            display: flex;
+            padding: 50px 0px;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            width: 85vw;
+            margin: auto;
+        }
+
+        table td,
+        table th {
+            border-color: black;
+            border-style: solid;
+            border-width: 1px;
+            font-size: 14px;
+            overflow: hidden;
+            padding: 10px 5px;
+            word-break: normal;
+        }
+
+        table th {
+            text-align: left;
+            vertical-align: top
+        }
+    </style>
+
+    <div class="table-content">
+        <table>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>janv</th>
+                    <th>fév</th>
+                    <th>mars</th>
+                    <th>avr</th>
+                    <th>mai</th>
+                    <th>juin</th>
+                    <th>juil</th>
+                    <th>aout</th>
+                    <th>sept</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>membre1</td>
+                    <td>
+                        <div class="valide"></div>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>membre2</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>membre3</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>membre4</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>membre5</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>membre6</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>membre7</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>achats</td>
+                    <td>45.5</td>
+                    <td>27.8</td>
+                    <td>00.00</td>
+                    <td>21.85</td>
+                    <td>15.15</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div>
+        <p>Montant disponible : 135.5 €</p>
+    </div>
+    <!-- if is_admin == 1 -->
+
+    <form method="GET" action="submit.php">
+        <fieldset>
+            <legend> Ajouter un membre </legend>
+            <label for="nom">Nom:</label><br>
+            <input type="text" id="text" name="nom"><br>
+            <label for="prenom">Prénom :</label><br>
+            <input type="text" id="text" name="prenom"><br>
+            <label for="email">Email :</label><br>
+            <input type="email" id="email" name="email"><br>
+            <label for="motdepasse">Mot de passe :</label><br>
+            <input type="password" id="password" name="motdepasse"><br>
+            <label for="date_insc">Date d'inscription :</label><br>
+            <input type="text" id="text" name="date_insc"><br>
+            <label for="type"> Vous souhaitez : </label> <br>
+            <input type="radio" name="type" value="ajouter"> Ajouter <br>
+            <input type="radio" name="type" value="retirer"> Retirer <br>
+            <input type="submit" value="Inscrire"><br><br>
+        </fieldset>
+    </form>
+</body>
+
+</html>
