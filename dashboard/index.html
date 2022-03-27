@@ -13,37 +13,10 @@
 </head>
 
 <body>
-    <style type="text/css">
-        .table-content {
-            display: flex;
-            padding: 50px 0px;
-        }
-
-        table {
-            border-collapse: collapse;
-            border-spacing: 0;
-            width: 85vw;
-            margin: auto;
-        }
-
-        table td,
-        table th {
-            border-color: black;
-            border-style: solid;
-            border-width: 1px;
-            font-size: 14px;
-            overflow: hidden;
-            padding: 10px 5px;
-            word-break: normal;
-        }
-
-        table th {
-            text-align: left;
-            vertical-align: top
-        }
-    </style>
-
+    <img class="deco" src="../img/power.svg" alt="Déconnexion">
+    <h1>Bienvenue Farès</h1>
     <div class="table-content">
+        <h2>Tableau de bord</h2>
         <table>
             <thead>
                 <tr>
@@ -65,22 +38,24 @@
                     <td>
                         <div class="valide"></div>
                     </td>
+                    <td class="checked"></td>
                     <td></td>
                     <td></td>
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td></td>
-                    <td></td>
+                    <td class="checked"></td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td>membre2</td>
+                    <td>membre2
+                        <img class="admin" src="../img/admin.svg" alt="Administrateur">
+                    </td>
+                    <td></td>
+                    <td class="checked"></td>
                     <td></td>
                     <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td class="checked"></td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -88,25 +63,25 @@
                 </tr>
                 <tr>
                     <td>membre3</td>
+                    <td class="checked"></td>
                     <td></td>
                     <td></td>
                     <td></td>
+                    <td class="checked"></td>
                     <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td class="checked"></td>
                     <td></td>
                     <td></td>
                 </tr>
                 <tr>
                     <td>membre4</td>
                     <td></td>
+                    <td class="checked"></td>
                     <td></td>
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td></td>
-                    <td></td>
+                    <td class="checked"></td>
                     <td></td>
                     <td></td>
                 </tr>
@@ -116,7 +91,7 @@
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td></td>
+                    <td class="checked"></td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -126,8 +101,8 @@
                     <td>membre6</td>
                     <td></td>
                     <td></td>
-                    <td></td>
-                    <td></td>
+                    <td class="checked"></td>
+                    <td class="checked"></td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -137,16 +112,16 @@
                 <tr>
                     <td>membre7</td>
                     <td></td>
+                    <td class="checked"></td>
                     <td></td>
-                    <td></td>
-                    <td></td>
+                    <td class="checked"></td>
                     <td></td>
                     <td></td>
                     <td></td>
                     <td></td>
                     <td></td>
                 </tr>
-                <tr>
+                <tr class="spending">
                     <td>achats</td>
                     <td>45.5</td>
                     <td>27.8</td>
@@ -160,32 +135,61 @@
                 </tr>
             </tbody>
         </table>
-    </div>
-
-    <div>
         <p>Montant disponible : 135.5 €</p>
     </div>
+
+
     <!-- if is_admin == 1 -->
 
-    <form method="GET" action="submit.php">
-        <fieldset>
-            <legend> Ajouter un membre </legend>
-            <label for="nom">Nom:</label><br>
-            <input type="text" id="text" name="nom"><br>
-            <label for="prenom">Prénom :</label><br>
-            <input type="text" id="text" name="prenom"><br>
-            <label for="email">Email :</label><br>
-            <input type="email" id="email" name="email"><br>
-            <label for="motdepasse">Mot de passe :</label><br>
-            <input type="password" id="password" name="motdepasse"><br>
-            <label for="date_insc">Date d'inscription :</label><br>
-            <input type="text" id="text" name="date_insc"><br>
-            <label for="type"> Vous souhaitez : </label> <br>
-            <input type="radio" name="type" value="ajouter"> Ajouter <br>
-            <input type="radio" name="type" value="retirer"> Retirer <br>
-            <input type="submit" value="Inscrire"><br><br>
-        </fieldset>
-    </form>
+    <div class="administration">
+        <h2>Gestion des inscrits</h2>
+        <div class="form add">
+            <h3>Ajouter d'un membre</h3>
+            <div>
+                <label for="nom">Nom:</label>
+                <input type="text" id="nom" name="nom">
+            </div>
+            <div>
+                <label for="prenom">Prénom :</label>
+                <input type="text" id="prenom" name="prenom">
+            </div>
+            <div>
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="email">
+            </div>
+            <div>
+                <label for="role">Rôle :</label>
+                <select name="role" id="role">
+                    <option value="admin">Administrateur</option>
+                    <option value="normal">Membre</option>
+                </select>
+            </div>
+            <div>
+                <label for="motdepasse">Mot de passe :</label>
+                <input type="password" id="password" name="motdepasse">
+            </div>
+
+            <button type="submit" id="add" onclick="singin()">Inscrire</button>
+        </div>
+
+        <div class="form remove">
+            <h3>Retirer un membre</h3>
+            <div>
+                <label for="membre">Membre :</label>
+                <select name="membre" id="membre">
+                    <option value="1">Farès</option>
+                    <option value="2">Adem</option>
+                    <option value="3">Ali</option>
+                    <option value="4">Victor</option>
+                    <option value="5">Optimus</option>
+                </select>
+            </div>
+
+            <button type="submit" id="add" onclick="remove()">Retirer de la base de données</button>
+        </div>
+    </div>
+
+
 </body>
 
 </html>
