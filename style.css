@@ -66,3 +66,17 @@ body {
     color: #166053;
     font-weight: bold;
 }
+
+.message {
+    background-color: rgb(255, 164, 164);
+    border-left: 2px solid rgb(184, 0, 0);
+    color: rgb(184, 0, 0);
+    text-align: left !important;
+    width: 330px;
+    margin: 10px auto 0 auto;
+    display: none !important;
+}
+
+.show {
+    display: inherit !important;
+}
