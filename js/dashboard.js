@@ -26,6 +26,9 @@ async function getData() {
         const data = await response.json()
         if (data.response === "error") {
             console.log(data.message);
+            if (data.message === "Aucun compte connecte") {
+                document.location.href = "../index.html"
+            }
         }
         if (data.response === "success") {
             if (data.data.role !== "ROLE_ADMIN") {
