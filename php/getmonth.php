@@ -6,7 +6,10 @@ if ($database->connect_error) {
     die("Connection failed: " . $database->connect_error);
 }
 
-$value = $database->query("SELECT SUM(montant) AS montant, date FROM `transactions` WHERE type = 'ACHAT' GROUP BY YEAR(date), MONTH(date)");
-
-var_dump($value->fetch_assoc());
+$data = $database->query("SELECT SUM(montant) AS montant, date FROM `transactions` WHERE type = 'ACHAT' GROUP BY YEAR(date), MONTH(date)");
+$final_value = [];
+while ($value = $data->fetch_assoc()) {
+    $final_value[] = $value;
+};
+echo json_encode($final_value);
 // $request->fetch();

@@ -34,137 +34,13 @@
                     <th>sept</th>
                     <th>oct</th>
                     <th>nov</th>
-                    <th>déc</th>
+                    <th>dec</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td>membre1</td>
-                    <td>
-                        <div class="valide"></div>
-                    </td>
-                    <td class="checked"></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td class="checked"></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>membre2
-                        (admin)
-                    </td>
-                    <td></td>
-                    <td class="checked"></td>
-                    <td></td>
-                    <td></td>
-                    <td class="checked"></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>membre3</td>
-                    <td class="checked"></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td class="checked"></td>
-                    <td></td>
-                    <td class="checked"></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>membre4</td>
-                    <td></td>
-                    <td class="checked"></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td class="checked"></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>membre5</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td class="checked"></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>membre6</td>
-                    <td></td>
-                    <td></td>
-                    <td class="checked"></td>
-                    <td class="checked"></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>membre7</td>
-                    <td></td>
-                    <td class="checked"></td>
-                    <td></td>
-                    <td class="checked"></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr class="spending">
-                    <td>achats</td>
-                    <td>45.5</td>
-                    <td>27.8</td>
-                    <td>00.00</td>
-                    <td>21.85</td>
-                    <td>15.15</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
+            <tbody class="members">
             </tbody>
         </table>
-        <p>Montant disponible : 135.5 €</p>
+        <p>Montant disponible : <span id="solde"></span> €</p>
     </div>
 
 
@@ -183,22 +59,15 @@
                 <input type="text" id="prenom" name="prenom">
             </div>
             <div>
-                <label for="role">Rôle :</label>
-                <select name="role" id="role">
-                    <option value="admin">Administrateur</option>
-                    <option value="normal">Membre</option>
-                </select>
+                <label for="pseudo">Pseudo :</label>
+                <input type="text" id="pseudo" name="pseudo">
             </div>
             <div>
                 <label for="motdepasse">Mot de passe :</label>
                 <input type="password" id="password" name="motdepasse">
             </div>
-            <div>
-                <label for="pseudo">Pseudo :</label>
-                <input type="text" id="pseudo" name="pseudo">
-            </div>
 
-            <button type="submit" id="add" onclick="singin()">Inscrire</button>
+            <button type="submit" id="add" onclick="addUser()">Inscrire</button>
         </div>
 
         <div class="form remove">
@@ -206,11 +75,6 @@
             <div>
                 <label for="membre">Membre :</label>
                 <select name="membre" id="membre">
-                    <option value="1">Farès</option>
-                    <option value="2">Adem</option>
-                    <option value="3">Ali</option>
-                    <option value="4">Victor</option>
-                    <option value="5">Optimus</option>
                 </select>
             </div>
 
@@ -225,11 +89,6 @@
             <div>
                 <label for="membre_buy">Membre :</label>
                 <select name="membre_buy" id="membre_buy">
-                    <option value="1">Farès</option>
-                    <option value="2">Adem</option>
-                    <option value="3">Ali</option>
-                    <option value="4">Victor</option>
-                    <option value="5">Optimus</option>
                 </select>
                 <div>
                     <label for="date_buy">Date:</label>
@@ -240,7 +99,7 @@
                     <input type="text" id="prix_buy" name="prix_buy">
                 </div>
             </div>
-            <button type="submit" id="add" onclick="remove()">Ajouter l'achat</button>
+            <button type="submit" id="add" onclick="addAchat()">Ajouter l'achat</button>
 
         </div>
         <div class="form pay">
@@ -248,11 +107,6 @@
             <div>
                 <label for="membre_pay">Membre :</label>
                 <select name="membre_pay" id="membre_pay">
-                    <option value="1">Farès</option>
-                    <option value="2">Adem</option>
-                    <option value="3">Ali</option>
-                    <option value="4">Victor</option>
-                    <option value="5">Optimus</option>
                 </select>
                 <div>
                     <label for="date_pay">Date:</label>
@@ -263,7 +117,7 @@
                     <input type="text" id="prix_pay" name="prix_pay">
                 </div>
             </div>
-            <button type="submit" id="add" onclick="remove()">Ajouter la cotisation</button>
+            <button type="submit" id="add" onclick="addCotisation()">Ajouter la cotisation</button>
 
         </div>
     </div>
