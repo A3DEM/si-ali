@@ -28,22 +28,26 @@ async function getData() {
                 document.location.href = "../index.html"
             }
         }
+        let isAdmin = false;
         if (data.response === "success") {
             if (data.data.role !== "ROLE_ADMIN") {
                 document.querySelector("#administration").remove();
-                if (data.data.role !== "ROLE_MEMBER") {
-                    document.querySelector("#management").remove();
-                }
+                document.querySelector("#management").remove();
+            } else {
+                isAdmin = true;
+                document.querySelector("#prix_pay").value = data.data.montant_min;
             }
         }
-        document.querySelector("#prix_pay").value = data.data.montant_min;
 
         const memberElement = document.querySelector(".members");
         const year = new Date().getFullYear();
         data.data.members.forEach((member) => {
-            document.querySelector("#membre").innerHTML += `<option value=${member.id}>${member.prenom}</option>`;
-            document.querySelector("#membre_pay").innerHTML += `<option value=${member.id}>${member.prenom}</option>`;
-            document.querySelector("#membre_buy").innerHTML += `<option value=${member.id}>${member.prenom}</option>`;
+            if (isAdmin) {
+                document.querySelector("#membre").innerHTML += `<option value=${member.id}>${member.prenom}</option>`;
+                document.querySelector("#membre_pay").innerHTML += `<option value=${member.id}>${member.prenom}</option>`;
+                document.querySelector("#membre_buy").innerHTML += `<option value=${member.id}>${member.prenom}</option>`;
+            }
+
             let temp = `<tr>
             <td>${member.prenom + " " + member.nom}</td>
             `
@@ -60,7 +64,6 @@ async function getData() {
             memberElement.innerHTML += temp;
         });
         document.querySelector("#solde").innerText = data.data.solde
-
         response = await fetch(`../php/getmonth.php`, {
             credentials: 'include'
         });
