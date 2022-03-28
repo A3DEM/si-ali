@@ -29,7 +29,10 @@ async function getData() {
         }
         if (data.response === "success") {
             if (data.data.role !== "ROLE_ADMIN") {
-                document.querySelector(".administration").remove();
+                document.querySelector("#administration").remove();
+                if (data.data.role !== "ROLE_MEMBER") {
+                    document.querySelector("#management").remove();
+                }
             }
         }
     }
@@ -37,6 +40,8 @@ async function getData() {
         console.log(e)
     }
 }
+
+
 
 function showMessage(message) {
     document.querySelector(".message").innerText = message;

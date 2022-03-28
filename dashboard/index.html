@@ -143,7 +143,7 @@
 
     <!-- if is_admin == 1 -->
 
-    <div class="administration">
+    <div class="administration" id="administration">
         <h2>Gestion des inscrits</h2>
         <div class="form add">
             <h3>Ajouter d'un membre</h3>
@@ -188,6 +188,56 @@
             </div>
 
             <button type="submit" id="add" onclick="remove()">Retirer de la base de données</button>
+        </div>
+    </div>
+    
+    <div class="administration" id="management">
+        <h2>Gestion de la caisse</h2>
+        <div class="form buy">
+            <h3>Ajouter un achat</h3>
+            <div>
+                <label for="membre">Membre :</label>
+                <select name="membre" id="membre">
+                    <option value="1">Farès</option>
+                    <option value="2">Adem</option>
+                    <option value="3">Ali</option>
+                    <option value="4">Victor</option>
+                    <option value="5">Optimus</option>
+                </select>
+                <div>
+                    <label for="date">Date:</label>
+                    <input type="text" id="date" name="date">
+                </div>
+                <div>
+                    <label for="prix">Prix:</label>
+                    <input type="text" id="prix" name="prix">
+                </div>
+            </div>
+            <button type="submit" id="add" onclick="remove()">Ajouter l'achat</button>
+
+        </div>
+        <div class="form pay">
+            <h3>Ajouter une cotisation</h3>
+            <div>
+                <label for="membre">Membre :</label>
+                <select name="membre" id="membre">
+                    <option value="1">Farès</option>
+                    <option value="2">Adem</option>
+                    <option value="3">Ali</option>
+                    <option value="4">Victor</option>
+                    <option value="5">Optimus</option>
+                </select>
+                <div>
+                    <label for="date">Date:</label>
+                    <input type="text" id="date" name="date">
+                </div>
+                <div>
+                    <label for="prix">Prix:</label>
+                    <input type="text" id="prix" name="prix">
+                </div>
+            </div>
+            <button type="submit" id="add" onclick="remove()">Ajouter la cotisation</button>
+
         </div>
     </div>
 

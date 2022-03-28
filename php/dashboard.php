@@ -15,7 +15,7 @@ echo json_encode(["response" => "success", "data" => [
 //     die("Connection failed: " . $database->connect_error);
 // }
 
-// $request = $database->prepare("SELECT id FROM membres WHERE mdp=? AND username=?");
+// $request = $database->prepare("SELECT * FROM cotisations");
 // $request->bind_param('ss', $_GET['password'], $_GET['username']);
 
 // $request->execute();
