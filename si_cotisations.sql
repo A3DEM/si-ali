@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le :  lun. 28 mars 2022 à 12:20
+-- Généré le :  lun. 28 mars 2022 à 13:29
 -- Version du serveur :  5.7.11
 -- Version de PHP :  7.0.3
 
@@ -61,7 +61,7 @@ CREATE TABLE `membres` (
 --
 
 INSERT INTO `membres` (`id`, `nom`, `prenom`, `roles`, `mdp`, `username`) VALUES
-(1, 'Abdelkrim', 'Farès', 'ROLE_ADMIN', 'wordpress', 'wordpress'),
+(1, 'Abdelkrim', 'Fares', 'ROLE_ADMIN', 'wordpress', 'wordpress'),
 (2, 'DURAN', 'Adem', 'ROLE_MEMBER', '1234', 'adem'),
 (3, 'FERHATI', 'Malik', 'ROLE_MEMBER', '1234', 'malik'),
 (4, 'BATTISTINI', 'Benjamin', 'ROLE_MEMBER', '1234', 'benjamin');
@@ -86,8 +86,11 @@ CREATE TABLE `transactions` (
 
 INSERT INTO `transactions` (`id`, `id_membre`, `date`, `montant`, `type`) VALUES
 (1, 1, '2022-03-28', '33', 'ACHAT'),
-(2, 2, '2022-03-28', '60', 'COTISATION'),
-(3, 3, '2022-03-09', '20', 'COTISATION');
+(2, 1, '2022-03-28', '60', 'COTISATION'),
+(3, 3, '2022-03-09', '20', 'COTISATION'),
+(4, 3, '2022-02-08', '0', 'ACHAT'),
+(5, 4, '2022-01-18', '0', 'ACHAT'),
+(6, 1, '2022-01-10', '0', 'ACHAT');
 
 --
 -- Index pour les tables déchargées
@@ -120,7 +123,7 @@ ALTER TABLE `membres`
 -- AUTO_INCREMENT pour la table `transactions`
 --
 ALTER TABLE `transactions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
