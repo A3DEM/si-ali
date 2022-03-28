@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le :  lun. 28 mars 2022 à 12:19
+-- Généré le :  lun. 28 mars 2022 à 12:20
 -- Version du serveur :  5.7.11
 -- Version de PHP :  7.0.3
 
@@ -21,6 +21,50 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `si_cotisations`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `data`
+--
+
+CREATE TABLE `data` (
+  `nom` varchar(255) NOT NULL,
+  `valeur` int(11) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `data`
+--
+
+INSERT INTO `data` (`nom`, `valeur`) VALUES
+('montant_min', 20),
+('solde', 47);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `membres`
+--
+
+CREATE TABLE `membres` (
+  `id` int(11) NOT NULL,
+  `nom` varchar(255) NOT NULL,
+  `prenom` varchar(255) NOT NULL,
+  `roles` varchar(255) NOT NULL,
+  `mdp` varchar(255) NOT NULL,
+  `username` varchar(255) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `membres`
+--
+
+INSERT INTO `membres` (`id`, `nom`, `prenom`, `roles`, `mdp`, `username`) VALUES
+(1, 'Abdelkrim', 'Farès', 'ROLE_ADMIN', 'wordpress', 'wordpress'),
+(2, 'DURAN', 'Adem', 'ROLE_MEMBER', '1234', 'adem'),
+(3, 'FERHATI', 'Malik', 'ROLE_MEMBER', '1234', 'malik'),
+(4, 'BATTISTINI', 'Benjamin', 'ROLE_MEMBER', '1234', 'benjamin');
 
 -- --------------------------------------------------------
 
@@ -50,6 +94,12 @@ INSERT INTO `transactions` (`id`, `id_membre`, `date`, `montant`, `type`) VALUES
 --
 
 --
+-- Index pour la table `membres`
+--
+ALTER TABLE `membres`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Index pour la table `transactions`
 --
 ALTER TABLE `transactions`
@@ -59,6 +109,12 @@ ALTER TABLE `transactions`
 --
 -- AUTO_INCREMENT pour les tables déchargées
 --
+
+--
+-- AUTO_INCREMENT pour la table `membres`
+--
+ALTER TABLE `membres`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT pour la table `transactions`
