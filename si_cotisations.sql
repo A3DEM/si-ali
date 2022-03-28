@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : dim. 27 mars 2022 à 09:32
+-- Généré le : lun. 28 mars 2022 à 10:02
 -- Version du serveur : 5.7.36
 -- Version de PHP : 7.4.26
 
@@ -35,7 +35,14 @@ CREATE TABLE IF NOT EXISTS `achats` (
   `montant` decimal(10,0) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_achat_membre` (`id_membre`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `achats`
+--
+
+INSERT INTO `achats` (`id`, `id_membre`, `date`, `montant`) VALUES
+(1, 1, '2022-03-28', '33');
 
 -- --------------------------------------------------------
 
@@ -47,11 +54,18 @@ DROP TABLE IF EXISTS `cotisations`;
 CREATE TABLE IF NOT EXISTS `cotisations` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `id_membre` int(11) NOT NULL,
-  `date` int(11) NOT NULL,
+  `date` date NOT NULL,
   `montant` int(11) NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `fk_cotisation_membre` (`id_membre`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  KEY `id_membre` (`id_membre`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `cotisations`
+--
+
+INSERT INTO `cotisations` (`id`, `id_membre`, `date`, `montant`) VALUES
+(1, 1, '2022-03-29', 33);
 
 -- --------------------------------------------------------
 
@@ -87,7 +101,7 @@ CREATE TABLE IF NOT EXISTS `membres` (
 --
 
 INSERT INTO `membres` (`id`, `nom`, `prenom`, `roles`, `mdp`, `username`) VALUES
-(1, 'Abdelkrim', 'Farès', 'ROLE_MEMBER', 'mdpTest123', 'wordpress');
+(1, 'Abdelkrim', 'Farès', 'ROLE_ADMIN', 'wordpress', 'wordpress');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
