@@ -15,18 +15,9 @@ if ($database->connect_error) {
     die("Connection failed: " . $database->connect_error);
 }
 
-$request = $database->prepare("SELECT * FROM transactions");
-$request->bind_param('ss', $_GET['password'], $_GET['username']);
+$request = $database->prepare("INSERT INTO `membres`(`nom`, `prenom`, `roles`, `mdp`, `username`) VALUES (?,?,?,?,?)");
+$request->bind_param('ss', $_GET['nom'], $_GET['prenom'], $_GET['role'], $_GET['password'], $_GET['username']);
 
 $request->execute();
-$request->bind_result($userId);
-$request->fetch();
-
-
-if (isset($userId)) {
-    echo json_encode(["response" => "success"]);
-    session_start();
-    $_SESSION['connectedId'] = $userId;
-} else {
-    echo json_encode(["response" => "error", "message" => "Nom de compte ou mot de passe incorrect"]);
-}
+// $request->bind_result($userId);
+// $request->fetch();
